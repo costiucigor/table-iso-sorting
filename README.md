@@ -1,29 +1,57 @@
-# test-task
+Задача:
+Откомментировать что по вашему мнению могут значить поля в ответе сервера ( Можно предположить что это может быть ):
 
-This template should help get you started developing with Vue 3 in Vite.
+curl -X 'POST'   'https://devops100.site/test/'   -H 'accept: */*'  -k -H 'Content-Type: application/json'   -d '{
+  "filters": {
+     "iso_3166_1_a2":"RU"
+  },
+  "paginate": {
+    "page": 1,
+    "pp_items": 10
+  }
+}'
 
-## Recommended IDE Setup
+Этот POST-запрос отправляется на https://devops100.site/test/ с использованием JSON-формата для передачи данных. В запросе отправляется объект с двумя ключами: filters и paginate.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+filters: Этот ключ содержит фильтры, применяемые к данным. В данном случае, мы фильтруем страны по iso_3166_1_a2 указывая "RU" в качестве значения. Чтобы получить информацию о стране RU
 
-## Customize configuration
+paginate: Этот ключ связан с параметрами пагинации, которые указывают на то, что нам нужна информация о странице 1, содержащей 10 элементов на странице (pp_items).
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+    "form_errors": null,
+    "success_message": "Success",
+    "page_data": {
+        "data": [],
+        "rpag": {
+            "has_next": false,
+            "has_previous": false,
+            "has_other_pages": false,
+            "next_page_number": null,
+            "previous_page_number": null,
+            "start_index": 0,
+            "end_index": 0,
+            "total_count": 249,
+            "selected_count": 0,
+            "pages": 1
+        }
+    },
+    "redirect": "",
+    "locale": "en",
+    "exc_stack": "",
+    "debug": [],
+    "user_groups": "",
+    "user_perms": ""
+}
 
-```sh
-npm install
-```
+Ответ на запрос возвращает объект JSON:
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+form_errors: Используется для сообщения об ошибках формы, но в данном случае, значение null указывает на отсутствие ошибок.
+success_message: Сообщение об успешном выполнении запроса, в данном случае, "Success".
+page_data: Это ключ, содержит данные о странице, но в этом ответе массив data пустой, что означает, что на данной странице нет данных.
+rpag: Этот ключ содержит информацию о пагинации, такую как наличие следующей и предыдущей страниц, количество общих страниц, и т. д.
+locale: Локаль, в данном случае, "en". (возможно параметр для i18n)
+exc_stack: Стек исключений (ошибок), в данном случае, пуст.
+debug: Вероятно, служебная информация для отладки.
+user_groups: Группы пользователя.
+user_perms: Разрешения пользователя.
+В целом, запрос и ответ направлены на получение информации о стране (в данном случае, "RU") с применением фильтрации и пагинации. Ответ также содержит информацию об успешности запроса, состоянии пагинации и другие дополнительные данные.
