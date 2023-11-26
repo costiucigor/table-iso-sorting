@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "name": "Russia",
+    "iso_3166_1_a2": "RU",
+    "capital": "Moscow"
+  },
+  {
+    "id": 2,
+    "name": "United States",
+    "iso_3166_1_a2": "US",
+    "capital": "Washington, D.C."
+  },
+  {
+    "id": 3,
+    "name": "China",
+    "iso_3166_1_a2": "CN",
+    "capital": "Beijing"
+  },
+  {
+    "id": 4,
+    "name": "India",
+    "iso_3166_1_a2": "IN",
+    "capital": "New Delhi"
+  },
+  {
+    "id": 5,
+    "name": "Brazil",
+    "iso_3166_1_a2": "BR"
+  },
+  {
+    "id": 6,
+    "name": "Japan",
+    "iso_3166_1_a2": "JP"
+  },
+  {
+    "id": 7,
+    "name": "Germany",
+    "iso_3166_1_a2": "DE"
+  },
+  {
+    "id": 8,
+    "name": "United Kingdom",
+    "iso_3166_1_a2": "GB"
+  },
+  {
+    "id": 9,
+    "name": "France",
+    "iso_3166_1_a2": "FR"
+  },
+  {
+    "id": 10,
+    "name": "Italy",
+    "iso_3166_1_a2": "IT"
+  },
+  {
+    "id": 11,
+    "name": "South Korea",
+    "iso_3166_1_a2": "KR"
+  },
+  {
+    "id": 12,
+    "name": "Australia",
+    "iso_3166_1_a2": "AU"
+  },
+  {
+    "id": 13,
+    "name": "Canada",
+    "iso_3166_1_a2": "CA"
+  },
+  {
+    "id": 14,
+    "name": "Mexico",
+    "iso_3166_1_a2": "MX"
+  }
+]
