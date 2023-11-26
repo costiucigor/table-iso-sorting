@@ -61,11 +61,12 @@ const getQuery = () => selectedCountry.value !== '' ? { country: selectedCountry
   gap: 8px;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .select-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 430px;
+  gap: 280px;
   justify-content: flex-start;
   align-items: center;
   padding-top: 10px;

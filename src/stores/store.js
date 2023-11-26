@@ -7,7 +7,7 @@ export const useCountryStore = defineStore('country', {
     }),
     getters: {
         getCountryByCode: (state) => (code) => {
-            return state.countries.find((country) => country.iso_3166_1_a2 === code);
+            return state.countries.find((country) => country.id === code);
         },
     },
     actions: {
