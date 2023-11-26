@@ -1,8 +1,9 @@
 <script setup>
-import { ref, computed } from 'vue';
+import {ref, computed, onMounted} from 'vue';
 import { useCountryStore } from '@/stores/store';
 import CTable from "@/components/CTable.vue";
 import { useRouter } from 'vue-router';
+import axios from "axios";
 
 const countryStore = useCountryStore();
 const router = useRouter();
@@ -15,6 +16,32 @@ const uniqueCountries = computed(() => [...new Set(countryStore.countries.map(co
 const updateFilter = () => {
   router.push({ name: 'Home', query: getQuery() });
 };
+
+const testCall = async () => {
+  try {
+    const response = await axios.post('https://devops100.site/test/', {
+      filters: {
+        iso_3166_1_a2: selectedCountry.value,
+      },
+      paginate: {
+        page: 1,
+        pp_items: itemsPerPage.value,
+      },
+    }, {
+      headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log('API Response:', response.data);
+  } catch (error) {
+    console.error('Error making API request:', error);
+  }
+}
+
+onMounted(() => {
+  testCall()
+})
 
 const getQuery = () => selectedCountry.value !== '' ? { country: selectedCountry.value } : undefined;
 </script>
